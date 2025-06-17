@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack_main
+    ports:
+      # The edge port is the main gateway for all AWS services
+      - "127.0.0.1:4566:4566"
+      # The legacy single-service ports (optional)
+      - "127.0.0.1:4510-4559:4510-4559"
+    environment:
+      # Specify the services we need for our project.
+      - SERVICES=dynamodb,sqs,sns
+      # Set the region to São Paulo, Brazil.
+      - AWS_DEFAULT_REGION=sa-east-1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+    volumes:
+      # Mount the docker socket to allow LocalStack to create other containers
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      # Persist LocalStack data across restarts
+      - "localstack-data:/var/lib/localstack"
+
+volumes:
+  localstack-data:
