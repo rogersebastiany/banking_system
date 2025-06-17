@@ -1,4 +1,4 @@
-package com.bank.customerservice.infraestructure.adapter.in.web.dto;
+package com.bank.customerservice.infrastructure.adapter.in.web.dto;
 
 import com.bank.customerservice.domain.model.Customer;
 

@@ -1,8 +1,8 @@
-package com.bank.customerservice.infraestructure.adapter.in.web;
+package com.bank.customerservice.infrastructure.adapter.in.web;
 
 import com.bank.customerservice.application.port.in.RegisterCustomerCommand;
 import com.bank.customerservice.application.port.in.RegisterCustomerUseCase;
-import com.bank.customerservice.infraestructure.adapter.in.web.dto.CustomerResponse;
+import com.bank.customerservice.infrastructure.adapter.in.web.dto.CustomerResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
