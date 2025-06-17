@@ -1,6 +1,9 @@
 package com.bank.customerservice.application.port.in;
 
 import com.bank.customerservice.domain.model.Customer;
+
+import jakarta.validation.Valid;
+
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -14,5 +17,5 @@ public interface RegisterCustomerUseCase {
      * @param command The command containing all necessary data for registration.
      * @return A CompletableFuture that completes with the newly created Customer.
      */
-    CompletableFuture<Customer> registerCustomer(RegisterCustomerCommand command);
+    CompletableFuture<Customer> registerCustomer(@Valid RegisterCustomerCommand command);
 }

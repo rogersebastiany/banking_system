@@ -9,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
-import jakarta.validation.Valid;
 import java.time.Instant;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -34,7 +33,7 @@ public class RegisterCustomerService implements RegisterCustomerUseCase {
      * @return A CompletableFuture that will complete with the created Customer.
      */
     @Override
-    public CompletableFuture<Customer> registerCustomer(@Valid RegisterCustomerCommand command) {
+    public CompletableFuture<Customer> registerCustomer(RegisterCustomerCommand command) {
         log.info("Attempting to register customer with email: {}", command.getEmail());
 
         // We start the asynchronous chain here.
